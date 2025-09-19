@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coding Skill | Yakha Portfolio</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', serif;
+      margin: 0;
+      background-image: url('background4.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .skill-detail {
+      margin-top: 40px;
+      padding: 60px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 30px;
+      max-width: 1200px;
+      min-height: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+
+      /* Changed layout */
+      display: flex;
+      flex-direction: row;   /* photo right, text left */
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    /* Fade-in animation */
+    .skill-detail h2, 
+    .skill-detail p, 
+    .skill-photo img {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+
+    .skill-detail.show h2,
+    .skill-detail.show p,
+    .skill-detail.show .skill-photo img {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .skill-text {
+      flex: 1; /* take left side */
+      text-align: left;
+    }
+
+    .skill-photo {
+      flex: 1; /* take right side */
+      display: flex;
+      justify-content: center;
+    }
+
+    .skill-photo img {
+      width: 350px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 3px solid #910f0f;
+    }
+    .skill-text h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .skill-text p {
+      font-size: 1.3rem;
+      line-height: 1.6;
+    }
+
+    .back-triangle {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 0;
+      height: 0;
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      border-right: 20px solid #910f0f;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .back-triangle:hover {
+      transform: scale(1.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2em 0;
+      background: #2c3e50;
+      color: #ecf0f1;
+      margin-top: 4em;
+    }
+
+    @media (max-width: 768px) {
+      .skill-detail {
+        flex-direction: column; /* stack on mobile */
+        padding: 30px;
+      }
+
+      .skill-photo img {
+        width: 180px;
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="back-triangle" onclick="location.href='skills.html'"></div>
+
+<section class="skill-detail" id="skill-section">
+  <div class="skill-text">
+    <h2 id="skill-title">Coding 💻</h2>
+    <p id="skill-desc">
+      "I enjoy building websites and solving problems with code. 
+      HTML, CSS, and JavaScript are my go-to tools,
+       but I’m always exploring new tech to level up my skills.
+        I love turning ideas into real, working sites that people can actually use and
+         enjoy. Debugging, experimenting with layouts, 
+         and making things look clean and smooth is honestly my kind of fun. 
+         Coding for me isn’t just about writing lines—it’s about creating something that works, 
+         looks good, and feels right."
+    </p>
+  </div>
+  <div class="skill-photo">
+    <img id="skill-img" src="coding.jpg" alt="Coding Photo">
+  </div>
+</section>
+
+<footer>
+  <p>@2025 Yakha | Portfolio</p>
+</footer>
+
+<script>
+  // Animate elements when page loads
+  window.addEventListener('DOMContentLoaded', () => {
+    const skillSection = document.getElementById('skill-section');
+
+    setTimeout(() => {
+      skillSection.classList.add('show');
+    }, 200);
+  });
+</script>
+
+</body>
+</html>

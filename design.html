@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Skill | Yakha Portfolio</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', serif;
+      margin: 0;
+      background-image: url('background2.jpg'); /* your background */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .skill-detail {
+      margin-top: 40px;
+      padding: 60px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 30px;
+      max-width: 1200px;
+      min-height: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .skill-text {
+      flex: 1;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+
+    .skill-photo {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+
+    .skill-photo img {
+      width: 350px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 3px solid #910f0f;
+    }
+
+    .skill-detail.show .skill-text,
+    .skill-detail.show .skill-photo {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .skill-text h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .skill-text p {
+      font-size: 1.3rem;
+      line-height: 1.6;
+    }
+
+    .back-triangle {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 0;
+      height: 0;
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      border-right: 20px solid #910f0f;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .back-triangle:hover {
+      transform: scale(1.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2em 0;
+      background: #2c3e50;
+      color: #ecf0f1;
+      margin-top: 4em;
+    }
+
+    @media (max-width: 768px) {
+      .skill-detail {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .skill-photo img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="back-triangle" onclick="location.href='skills.html'"></div>
+
+<section class="skill-detail" id="skill-section">
+  <!-- Left side (photo) -->
+  <div class="skill-photo">
+    <img id="skill-img" src="design.jpg" alt="Design Photo">
+  </div>
+  <!-- Right side (text) -->
+  <div class="skill-text">
+    <h2 id="skill-title">Design 🎨</h2>
+    <p id="skill-desc">
+      "Yo! I’m all about making designs that look dope and actually work.
+       From graphics to UI/UX, I love messing with colors, layouts, 
+       and all the little details to make something that feels smooth
+        and fun to use. Every project’s a chance to turn ideas into
+         something real that people actually enjoy. Basically, 
+         I just love creating stuff that’s both pretty and practical."
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>@2025 Yakha | Portfolio</p>
+</footer>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const skillSection = document.getElementById('skill-section');
+    setTimeout(() => {
+      skillSection.classList.add('show');
+    }, 200);
+  });
+</script>
+
+</body>
+</html>

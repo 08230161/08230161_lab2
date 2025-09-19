@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dancing Skill | Yakha Portfolio</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', serif;
+      margin: 0;
+      background-image: url('background3.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .skill-detail {
+      margin-top: 40px;
+      padding: 60px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 30px;
+      max-width: 1200px;
+      min-height: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+
+      display: flex; /* side by side */
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .skill-text {
+      flex: 1;
+      text-align: left;
+    }
+
+    .skill-text h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: all 0.8s ease;
+    }
+
+    .skill-text p {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      max-width: 500px;
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: all 0.8s ease 0.2s;
+    }
+
+    .skill-detail.show .skill-text h2,
+    .skill-detail.show .skill-text p {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .skill-video video {
+      width: 350px;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 3px solid #910f0f;
+      opacity: 0;
+      transform: translateX(30px);
+      transition: all 0.8s ease 0.4s;
+    }
+
+    .skill-detail.show .skill-video video {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .back-triangle {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 0;
+      height: 0;
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      border-right: 20px solid #910f0f;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .back-triangle:hover {
+      transform: scale(1.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2em 0;
+      background: #2c3e50;
+      color: #ecf0f1;
+      margin-top: 4em;
+    }
+
+    @media (max-width: 768px) {
+      .skill-detail {
+        flex-direction: column;
+        padding: 30px;
+      }
+      .skill-video video {
+        width: 200px;
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="back-triangle" onclick="location.href='skills.html'"></div>
+
+<section class="skill-detail" id="skill-section">
+  <!-- Left side: text -->
+  <div class="skill-text">
+    <h2>Dancing 💃</h2>
+    <p>
+      "Dancing is my passion, and I love expressing myself through every move and beat.
+       From classical to contemporary, I enjoy learning different styles and 
+       mixing them into my own flow. Every routine is a chance to tell a story, 
+       feel the rhythm, and just let go. Dance isn’t just movement for me—it’s how I connect with myself, the music, 
+       and the world around me."
+    </p>
+  </div>
+
+  <!-- Right side: video -->
+  <div class="skill-video">
+  <video autoplay muted loop controls>
+    <source src="video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  </div>
+</section>
+
+<footer>
+  <p>@2025 Yakha | Portfolio</p>
+</footer>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const skillSection = document.getElementById('skill-section');
+    setTimeout(() => {
+      skillSection.classList.add('show');
+    }, 200);
+  });
+</script>
+
+</body>
+</html>
